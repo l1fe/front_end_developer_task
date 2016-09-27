@@ -1,4 +1,4 @@
-// authTokenService.js
+// authToken.js
 
 var app = angular.module("psJwtApp");
 

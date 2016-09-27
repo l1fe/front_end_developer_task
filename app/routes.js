@@ -26,13 +26,7 @@ app.config(function ($stateProvider, $httpProvider) {
             url: '/logout',
             templateUrl: 'app/auth/logout.html',
             controller: 'logoutCtrl'
-        })
-
-        .state('auth.register', {
-            url: '/register',
-            templateUrl: 'app/auth/register.html'
         });
 
     $httpProvider.interceptors.push('authInterceptor');
-
 });

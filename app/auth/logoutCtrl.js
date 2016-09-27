@@ -1,4 +1,4 @@
-// loginCtrl.js
+// logoutCtrl.js
 
 var app = angular.module("psJwtApp");
 
