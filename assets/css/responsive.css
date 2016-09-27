@@ -1,0 +1,12 @@
+.panel-centered {
+    margin: auto;
+    width: 100%;
+}
+
+@media (min-width: 544px) {
+    .panel-centered {
+        width: 500px;
+    }
+}
+
+

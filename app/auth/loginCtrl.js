@@ -2,12 +2,14 @@
 
 var app = angular.module("psJwtApp");
 
-app.controller('loginCtrl', function ($scope, $state, $http, md5, authService, API_URL) {
+app.controller('loginCtrl', function ($scope, $state, $http, md5, authService) {
     var isAuthenticated = authService.isAuthenticated();
     console.log('isAuthenticated', isAuthenticated);
     if (isAuthenticated) {
         $state.go('home');
     }
+
+    $scope.authSuccess = 1;
 
     $scope.submit = function () {
         var username = $scope.username;
@@ -26,10 +28,14 @@ app.controller('loginCtrl', function ($scope, $state, $http, md5, authService, A
                 }
             },
             function(err) {
-                console.log('loginCtrl:login err', err);
                 $scope.authSuccess = 0;
+                $scope.authMessage = 'Server error';
             }
         );
 
     };
+
+    $scope.foo = function() {
+        $scope.authSuccess = 1;
+    }
 });

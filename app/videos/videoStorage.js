@@ -3,8 +3,6 @@
 var app = angular.module("psJwtApp");
 
 app.factory('videoStorage', function($http, $sce, API_URL) {
-
-
     var videoStorage = function() {
         this.videos = [];
         this.busy = false;
@@ -12,8 +10,6 @@ app.factory('videoStorage', function($http, $sce, API_URL) {
         this.noMorePossibleResults = false;
         this.VIDEOS_PER_PAGE = 10;
     };
-
-
 
     videoStorage.prototype.nextPage = function() {
         if (this.busy) {

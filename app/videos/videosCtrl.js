@@ -2,29 +2,24 @@
 
 var app = angular.module("psJwtApp");
 
-app.controller('videosCtrl', function ($scope, $http, $sce, videoStorage, API_URL) {
+app.controller('videosCtrl', function ($scope, $http, $sce, videoStorage) {
     $scope.videoStorage = new videoStorage();
 
-    $scope.video = {};
+    var players = [];
 
-    $scope.video.config = {
-        preload: "none",
-        sources: [
-            {src: $sce.trustAsResourceUrl("http://static.videogular.com/assets/videos/videogular.mp4"), type: "video/mp4"},
-            {src: $sce.trustAsResourceUrl("http://static.videogular.com/assets/videos/videogular.webm"), type: "video/webm"},
-            {src: $sce.trustAsResourceUrl("http://static.videogular.com/assets/videos/videogular.ogg"), type: "video/ogg"}
-        ],
-        tracks: [
-            {
-                src: "http://www.videogular.com/assets/subs/pale-blue-dot.vtt",
-                kind: "subtitles",
-                srclang: "en",
-                label: "English",
-                default: ""
+    $scope.onPlayerReady = function (API, index) {
+        // Register player
+        players[index] = API;
+    };
+
+    $scope.onUpdateState = function (state, index) {
+        if (state === 'play') {
+            // Pause other players
+            for (var i = 0, l = players.length; i < l; i++) {
+                if (i !== index) {
+                    players[i].pause();
+                }
             }
-        ],
-        theme: {
-            url: "http://www.videogular.com/styles/themes/default/latest/videogular.css"
         }
     };
 
