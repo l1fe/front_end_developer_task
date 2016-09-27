@@ -1,0 +1,88 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+
+    <!-- Bower CSS -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="bower_components/videogular-themes-default/videogular.css" />
+    <!-- /Bower CSS -->
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+    <!-- /Theme CSS -->
+</head>
+
+<body ng-app="psJwtApp">
+
+
+<div ng-include="'app/navbar/navbar.html'"></div>
+
+<!-- Content -->
+<div class="container">
+    <!-- Place to inject content -->
+    <div ui-view></div>
+    <!-- /Place to inject content -->
+</div>
+<!-- /Content -->
+
+<!-- Bower JS -->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="bower_components/angular-md5/angular-md5.js"></script>
+<script src="bower_components/ngInfiniteScroll/build/ng-infinite-scroll.js"></script>
+
+<script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+<script src="bower_components/videogular/videogular.js"></script>
+<script src="bower_components/videogular-controls/vg-controls.js"></script>
+<script src="bower_components/videogular-overlay-play/vg-overlay-play.js"></script>
+<script src="bower_components/videogular-poster/vg-poster.js"></script>
+<script src="bower_components/videogular-buffering/vg-buffering.js"></script>
+
+<!-- /Bower JS -->
+
+<!-- Theme JS -->
+<!-- /Theme JS -->
+
+<!-- Application JS -->
+<script src="app/app.js"></script>
+<script src="app/config.js"></script>
+
+<script src="app/routes.js"></script>
+
+<script src="app/auth/authToken.js"></script>
+<script src="app/auth/authInterceptor.js"></script>
+<script src="app/auth/authService.js"></script>
+<script src="app/navbar/navbarCtrl.js"></script>
+<script src="app/auth/loginCtrl.js"></script>
+<script src="app/auth/logoutCtrl.js"></script>
+<script src="app/videos/videoStorage.js"></script>
+<script src="app/videos/videosCtrl.js"></script>
+<!-- /Application JS -->
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
