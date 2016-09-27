@@ -1,11 +1,11 @@
 
 
-<div infinite-scroll="videoStorage.nextPage()" infinite-scroll-disabled="videoStorage.busy || videoStorage.noMorePossibleResults" >
+<div  infinite-scroll="videoStorage.nextPage()" infinite-scroll-disabled="videoStorage.busy || videoStorage.noMorePossibleResults" >
 
-    <div ng-repeat="video in videoStorage.videos">
-        <h3 ng-bind="video.name"></h3>
+    <div ng-repeat="video in videoStorage.videos" class="col-sm-5ths" style="height: 250px;">
         <div ng-include="'app/videos/videogular_container.html'"></div>
-        <p ng-bind="video.description"></p>
+        <a href="#" class="video_panel_title" ng-bind="video.name"></a>
+
     </div>
 
     <span ng-if="videoStorage.busy">Loading more videos ...</span>
