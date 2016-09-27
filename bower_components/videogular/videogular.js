@@ -856,7 +856,7 @@ angular.module("com.2fdevs.videogular")
 "use strict";
 angular.module("com.2fdevs.videogular")
     .directive("vgMedia",
-    ["$timeout", "$templateCache", "VG_UTILS", "VG_STATES", function ($timeout, $templateCache, VG_UTILS, VG_STATES) {
+    ["$timeout", "VG_UTILS", "VG_STATES", function ($timeout, VG_UTILS, VG_STATES) {
         return {
             restrict: "E",
             require: "^videogular",
