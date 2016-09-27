@@ -10,26 +10,6 @@ app.config(function ($stateProvider, $httpProvider) {
             controller: 'videosCtrl'
         })
 
-
-        .state('videos', {
-            url: '/videos',
-            abstract: true,
-            views: {
-                '': {
-                    templateUrl: 'app/videos/index.html'
-                }
-            }
-        })
-
-        .state('videos.list', {
-            url: '',
-            views: {
-                'main@videos': {
-                    templateUrl: 'app/videos/list.html'
-                }
-            }
-        })
-
         .state('auth', {
             url: '/auth',
             abstract: true,
