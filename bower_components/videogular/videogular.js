@@ -7,7 +7,6 @@
 angular.module("com.2fdevs.videogular", ["ngSanitize"])
     .run(
     ["$templateCache", function ($templateCache) {
-        console.log($templateCache);
         $templateCache.put("vg-templates/vg-media-video", "<video></video>");
         $templateCache.put("vg-templates/vg-media-audio", "<audio></audio>");
         // Support for browsers that doesn't have .bind()
@@ -863,8 +862,6 @@ angular.module("com.2fdevs.videogular")
             require: "^videogular",
             templateUrl: function (elem, attrs) {
                 var vgType = attrs.vgType || "video";
-                var x = $templateCache.get("vg-templates/vg-media-" + vgType);
-                console.log(x);
                 return attrs.vgTemplate || "vg-templates/vg-media-" + vgType;
             },
             scope: {

@@ -1,21 +1,10 @@
 
-<h1 ng-bind="videos.length"></h1>
-
-<div class="videogular-container">
-    <videogular vg-theme="video.config.theme.url">
-        <vg-media vg-src="video.config.sources"
-                  vg-native-controls="true">
-        </vg-media>
-
-
-    </videogular>
-</div>
 
 <div infinite-scroll="videoStorage.nextPage()" infinite-scroll-disabled="videoStorage.busy || videoStorage.noMorePossibleResults" >
 
-
     <div ng-repeat="video in videoStorage.videos">
         <h3 ng-bind="video.name"></h3>
+        <div ng-include="'app/videos/videogular_container.html'"></div>
         <p ng-bind="video.description"></p>
     </div>
 
