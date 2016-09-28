@@ -14,3 +14,10 @@ app
 --assets
 ----css
 ----js
+
+To run test:
+
+npm install karma —save-dev
+npm install -g karma-cli
+npm install jasmine-core
+npm install karma-jasmine karma-chrome-launcher —save-dev
