@@ -1,0 +1,17 @@
+<div class="row">
+    <div class="col-md-8 col-md-offset-2" ng-if="videoExists">
+        <h1>{{video.name}}</h1>
+        <div ng-include="'app/components/video_single/videogular_container_big.html'"></div>
+        <p>{{video.description}}</p>
+        <p>{{video.avgRating}}</p>
+
+        <form ng-submit="rateVideo()">
+            <input ng-model="userRating" name="userRating" required="">
+            <button class="btn btn-primary" type="submit">Rate video</button>
+        </form>
+
+    </div>
+    <div ng-if="!videoExists">
+        <h1>Video not found</h1>
+    </div>
+</div>

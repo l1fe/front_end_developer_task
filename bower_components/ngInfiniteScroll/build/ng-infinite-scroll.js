@@ -179,6 +179,7 @@ angular.module('infinite-scroll', []).value('THROTTLE_MILLISECONDS', null).direc
           }
           return $interval.cancel(checkInterval);
         }));
+
       }
     };
   }

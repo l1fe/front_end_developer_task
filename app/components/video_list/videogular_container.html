@@ -1,15 +1,15 @@
-<div class="videogular-container">
+<div class="videogular_container">
     <videogular vg-theme="video.config.theme.url" vg-player-ready="onPlayerReady($API, $index)" vg-update-state="onUpdateState($state, $index)">
         <vg-media vg-src="video.config.sources">
         </vg-media>
 
         <vg-controls vg-autohide="video.config.plugins.controls.autoHide" vg-autohide-time="video.config.plugins.controls.autoHideTime">
             <vg-play-pause-button></vg-play-pause-button>
-            <vg-time-display>{{ currentTime | date:'mm:ss':'+0000' }}</vg-time-display>
+            <!--<vg-time-display>{{ currentTime | date:'mm:ss':'+0000' }}</vg-time-display>-->
             <vg-scrub-bar>
                 <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
             </vg-scrub-bar>
-            <vg-time-display>{{ timeLeft | date:'mm:ss':'+0000' }}</vg-time-display>
+            <!--<vg-time-display>{{ timeLeft | date:'mm:ss':'+0000' }}</vg-time-display>-->
             <vg-volume>
                 <vg-mute-button></vg-mute-button>
                 <vg-volume-bar></vg-volume-bar>
@@ -18,7 +18,6 @@
         </vg-controls>
 
         <vg-overlay-play></vg-overlay-play>
-
 
     </videogular>
 </div>

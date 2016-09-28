@@ -5,20 +5,20 @@
     <div class="panel-body">
         <form ng-submit="submit()">
             <fieldset>
-                <div class="alert alert-dismissible alert-danger" ng-if="!authSuccess">
-                    <button type="button" class="close" data-dismiss="alert" ng-click="refreshAuthSuccess()">&times;</button>
+                <div class="alert alert-dismissible alert-danger" ng-if="authAlertShown">
+                    <button type="button" class="close" data-dismiss="alert" ng-click="closeAlert()">&times;</button>
                     <strong>Error: </strong> <span ng-bind="authMessage"></span>
                 </div>
 
                 <div class="form-group">
                     <label for="input_username" class="col-lg-2 control-label">Username</label>
                     <input ng-model="username" class="form-control" placeholder="Username" name="username"
-                           type="text" id="input_username">
+                           type="text" id="input_username" required="">
                 </div>
                 <div class="form-group">
                     <label for="input_password" class="col-lg-2 control-label">Password</label>
                     <input ng-model="password" class="form-control" placeholder="Password" name="password"
-                           type="password" id="input_password">
+                           type="password" id="input_password" required="">
                 </div>
 
                 <button type="submit" class="btn btn-block btn-primary btn-primary">Login</button>

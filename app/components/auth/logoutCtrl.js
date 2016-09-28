@@ -2,12 +2,15 @@
 
 var app = angular.module("psJwtApp");
 
+// logout controller
 app.controller('logoutCtrl', function ($state, authService) {
-    console.log('logout ctrl');
+
+    // logout user
     function logout() {
         authService.logout();
     }
 
+    // logout & redirect
     logout();
-    $state.go('home');
+    $state.go('auth.login');
 });
