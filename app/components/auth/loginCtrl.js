@@ -26,7 +26,6 @@ app.controller('loginCtrl', function ($scope, $state, $http, md5, authService) {
 
         authService.login(username, passwordHash).then(
             function (res) {
-                console.log('loginCtrl:login', res.data);
                 if ( res.data.status == 'success') {
                     $state.go('videos');
                 } else {

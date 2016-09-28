@@ -5,7 +5,7 @@ var app = angular.module("psJwtApp");
 // routing
 
 app.config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
-    // $urlRouterProvider.otherwise('/videos');
+    $urlRouterProvider.otherwise('/videos');
 
     $stateProvider
         .state('videos', {

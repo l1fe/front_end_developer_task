@@ -6,11 +6,11 @@ var app = angular.module("psJwtApp");
 app.controller('logoutCtrl', function ($state, authService) {
 
     // logout user
-    function logout() {
+    this.logout = function() {
         authService.logout();
     }
 
     // logout & redirect
-    logout();
+    this.logout();
     $state.go('auth.login');
 });
