@@ -38,11 +38,12 @@ angular.module('psJwtApp').service('videoService', function ($http, $sce, API_UR
         };
     };
 
+    // set average rating for video
     this.setAvgRating = function(video) {
         video.avgRating = this.GetAvgRating(video);
-    }
+    };
 
-    // calculate and set average rating for video
+    // calculate average rating for video
     this.GetAvgRating = function(video) {
         // Calculate average rating by using js reduce : Avg = (1/n)Σx_i (i = 1..n)
         return video.ratings.reduce(function(sum, a) { return sum + a }, 0)/(video.ratings.length || 1);

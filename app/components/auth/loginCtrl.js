@@ -2,7 +2,7 @@
 
 var app = angular.module("psJwtApp");
 
-// login controller
+// login controller for handling login panel
 app.controller('loginCtrl', function ($scope, $state, $http, md5, authService) {
     // Check if user is logged in
     // Redirect authorized user to videos state

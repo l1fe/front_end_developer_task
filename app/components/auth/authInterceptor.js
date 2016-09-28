@@ -2,6 +2,7 @@
 
 var app = angular.module("psJwtApp");
 
+// interceptor is useful for appending sessionId to requests & handling response errors
 angular.module('psJwtApp').factory('authInterceptor', function($q, authToken, $injector, API_URL) {
     return {
         request: function(config) {

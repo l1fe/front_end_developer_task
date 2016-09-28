@@ -2,8 +2,7 @@
 
 var app = angular.module("psJwtApp");
 
-// video list controller
-
+// video list controller for handling ajax loading & prevent simultaneous multiple video play
 app.controller('videoListCtrl', function ($scope, $state, $http, $sce, videoService) {
 
     // prevent simultaneous multiple video play
