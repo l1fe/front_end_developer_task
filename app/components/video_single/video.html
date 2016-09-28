@@ -5,10 +5,13 @@
         <p>{{video.description}}</p>
         <p>{{video.avgRating}}</p>
 
-        <form ng-submit="rateVideo()">
+        <!--<form ng-submit="rateVideo()">
             <input ng-model="userRating" name="userRating" required="">
             <button class="btn btn-primary" type="submit">Rate video</button>
-        </form>
+        </form>-->
+        <div class="alert alert-success"> <span class="label label-info">{{rateStatus}}</span>
+            <div star-rating rating="starRating" read-only="{{freezeRate}}" max-rating="5" click="rateVideo(param)"></div>
+        </div>
 
     </div>
     <div ng-if="!videoExists">

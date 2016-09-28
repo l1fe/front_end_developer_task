@@ -17,6 +17,7 @@ angular.module('psJwtApp').service('videoService', function ($http, $sce, API_UR
     this.rateVideo = function(videoId, rating) {
         console.log('rate video attempt');
         console.log(videoId, rating);
+        console.log(API_URL + 'video/ratings');
         return $http.post(API_URL + 'video/ratings', {
             videoId: videoId,
             rating: rating
@@ -37,9 +38,13 @@ angular.module('psJwtApp').service('videoService', function ($http, $sce, API_UR
         };
     };
 
-    // calculate and set average rating for video
     this.setAvgRating = function(video) {
+        video.avgRating = this.GetAvgRating(video);
+    }
+
+    // calculate and set average rating for video
+    this.GetAvgRating = function(video) {
         // Calculate average rating by using js reduce : Avg = (1/n)Σx_i (i = 1..n)
-        video.avgRating = video.ratings.reduce(function(sum, a) { return sum + a }, 0)/(video.ratings.length || 1);
+        return video.ratings.reduce(function(sum, a) { return sum + a }, 0)/(video.ratings.length || 1);
     }
 });

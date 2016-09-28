@@ -4,7 +4,7 @@
     <div ng-repeat="video in videos" class="col-sm-4 col-md-5ths video_panel" >
         <div ng-include="'app/components/video_list/videogular_container.html'"></div>
         <a href="" ng-click="clickHandler(video._id)" class="video_panel_title" ng-bind="video.name"></a>
-        <span ng-bind="video.avgRating"></span>
+        <div star-rating rating="video.avgRating" read-only="true" max-rating="5"></div>
     </div>
     <div class="clearfix"></div>
 

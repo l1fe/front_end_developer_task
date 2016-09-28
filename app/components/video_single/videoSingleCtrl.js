@@ -5,6 +5,11 @@ var app = angular.module("psJwtApp");
 // single page video controller
 
 app.controller('videoSingleCtrl', function ($scope, $stateParams, videoService) {
+
+    $scope.starRating = 0;
+    $scope.freezeRate = false;
+    $scope.rateStatus = 'Rate this video!!!';
+
     var videoId = $stateParams.videoId;
 
     $scope.video = {};
@@ -30,10 +35,13 @@ app.controller('videoSingleCtrl', function ($scope, $stateParams, videoService) 
         }
     );
 
-    $scope.rateVideo = function() {
-        console.log($scope.userRating);
-        videoService.rateVideo($scope.video._id, 3).then(function(res){
+    $scope.rateVideo = function(param) {
+        videoService.rateVideo($scope.video._id, param).then(function(res){
             console.log(res);
+            $scope.video.ratings = res.data.data.ratings;
+            videoService.setAvgRating($scope.video);
+            $scope.freezeRate = true;
+            $scope.rateStatus = 'Thank you for your rating!!!';
         });
     }
 });
