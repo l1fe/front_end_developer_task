@@ -29,6 +29,10 @@
         width: 20%;
         float: left;
     }
+    .videogular_container_big {
+        width: 80%;
+        height: 400px;
+    }
 }
 
 @media (min-width: 992px) {
@@ -44,3 +48,4 @@
         float: left;
     }
 }
+

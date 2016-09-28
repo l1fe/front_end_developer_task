@@ -8,7 +8,7 @@ app.controller('videoSingleCtrl', function ($scope, $stateParams, videoService) 
 
     $scope.starRating = 0;
     $scope.freezeRate = false;
-    $scope.rateStatus = 'Rate this video!!!';
+    $scope.rateStatus = 'Rate this video!';
 
     var videoId = $stateParams.videoId;
 
@@ -41,7 +41,7 @@ app.controller('videoSingleCtrl', function ($scope, $stateParams, videoService) 
             $scope.video.ratings = res.data.data.ratings;
             videoService.setAvgRating($scope.video);
             $scope.freezeRate = true;
-            $scope.rateStatus = 'Thank you for your rating!!!';
+            $scope.rateStatus = 'Thank you for your rating!';
         });
     }
 });

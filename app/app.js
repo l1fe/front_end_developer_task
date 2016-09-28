@@ -9,5 +9,10 @@ var app = angular.module("psJwtApp", [
     "com.2fdevs.videogular.plugins.controls",
     "com.2fdevs.videogular.plugins.overlayplay",
     "com.2fdevs.videogular.plugins.poster"
-]);
+])
 
+
+.run(function ($state,$rootScope) {
+    // track current state
+    $rootScope.$state = $state;
+});
